@@ -41,7 +41,6 @@ fetch("https://pokeapi-proxy.freecodecamp.rocks/api/pokemon")
 	.then((data) => {
 		pokemonDataArr = data;
 		displayPokemon(pokemonDataArr.results, id, Name);
-		// console.log(pokemonDataArr.results);
 	})
 	.catch((err) => {
 		pokemonHead.innerHTML =
@@ -70,7 +69,6 @@ const displayPokemon = (pokemons, id1, name1) => {
 							specialAttack.textContent = data.stats[3].base_stat;
 							specialDefense.textContent = data.stats[4].base_stat;
 							speed.textContent = data.stats[5].base_stat;
-							console.log(name);
 							pokemonName.textContent = name.toUpperCase();
 
 							pokemonId.textContent = ` #${id}`;
@@ -78,15 +76,12 @@ const displayPokemon = (pokemons, id1, name1) => {
 							weight.textContent = `Weight: ${data.weight}`;
 
 							height.textContent = `Height: ${data.height}`;
-							// console.log(imgPokemon);
 
 							const image1 = document.createElement("img");
 
 							image1.id = "sprite";
 							image1.src = data.sprites.front_default;
 							imgPokemon.appendChild(image1);
-
-							// console.log(data.types[0].type.url);
 
 							types.style.visibility = "visible";
 
